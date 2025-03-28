@@ -95,6 +95,8 @@ To add server runtime libraries (such as Tomcat) to the classpath of your Maven 
 
 Once the server runtime libraries are added to your classpath, you should be able to access the required classes (such as HttpServlet, ServletException, etc.) from your servlet API in your project.
 
+#### You are now Good To Go. Make sure your XAMPP is running and your database is ready to go as well.
+
 ### 7. Troubleshooting
 
 These are some **troubles** that you could mostly likely face. If there are any other problem that you think needs to be mentioned which will help others, please feel free to add here.
@@ -113,6 +115,8 @@ These are some **troubles** that you could mostly likely face. If there are any 
 
 **7.5 Server Not Starting**
  If the Tomcat server doesn't start, ensure your server.xml is configured correctly and that the server is pointing to the correct project.
+ 
+
 
 ### 8. Contributing
 Feel free to fork the repository and submit pull requests for any changes or improvements.
