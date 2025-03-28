@@ -92,16 +92,16 @@ To add server runtime libraries (such as Tomcat) to the classpath of your Maven 
 Once the server runtime libraries are added to your classpath, you should be able to access the required classes (such as HttpServlet, ServletException, etc.) from your servlet API in your project.
 
 ### 6. Troubleshooting
+
+These are some **troubles** that you could mostly likely face. If there are any other problem that you think needs to be mentioned which will help others, please feel free to add here.
+**6.1 Missing Class Errors**
 - If you are still seeing missing class errors after adding the runtime libraries, ensure the Maven scope for your dependencies is set correctly (e.g., provided).
 
-**404 Not Found**
+**6.2 404 Not Found**
 - Ensure that the servlet URL mapping in web.xml or @WebServlet annotation matches the path you are trying to access in the browser.
 
-**Servlet not deploying**
+**6.3 Servlet not deploying**
 - Make sure that the Dynamic Web Module facet is enabled in Eclipse. Go to Project Facets → ensure Dynamic Web Module is checked.
 
-**ClassNotFoundException**
+**6.4 ClassNotFoundException**
 - Ensure that the correct dependencies are in your pom.xml, and run mvn clean install to rebuild the project.
-
-
-
