@@ -122,4 +122,4 @@ These are some **troubles** that you could mostly likely face. If there are any 
 Feel free to fork the repository and submit pull requests for any changes or improvements.
 
 ### 9. License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
