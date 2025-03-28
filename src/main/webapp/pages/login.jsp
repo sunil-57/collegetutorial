@@ -12,7 +12,7 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow" style="width: 25rem;">
             <h3 class="text-center">Register</h3>
-            <form action="LogInController" method="post">
+            <form action="../LogInController" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Username</label>
                     <input type="text" class="form-control" id="email" name="username">
