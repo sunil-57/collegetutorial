@@ -1,0 +1,27 @@
+# Maven target directory (compiled files)
+target/
+
+# Eclipse specific files
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# Tomcat work and temp files
+logs/
+work/
+temp/
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific files
+.env
