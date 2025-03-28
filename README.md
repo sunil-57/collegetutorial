@@ -56,53 +56,66 @@ If your project runs on Tomcat, follow these steps:
 
 - Set the Tomcat installation directory and click Finish.
 
-- Add your Maven project to the Tomcat server:	
-	- Right-click on the Tomcat server → Add and Remove.
-	- Move your project from Available to Configured and click Finish.
+### 5. Add the Maven Project to Tomcat and Start the Server
 
-- Start the Tomcat server.
+- Right-click on the Tomcat server in the Servers view.
 
-### 5. Add Server Runtime Libraries in Eclipse
+- Select Add and Remove.
+
+- In the Add and Remove Projects window, move your project from Available to Configured by selecting your project and clicking the Add button.
+
+- Click Finish.
+
+### 6. Add Server Runtime Libraries in Eclipse
 
 To add server runtime libraries (such as Tomcat) to the classpath of your Maven project, follow these steps:
 
-**5.1 Open Project Properties**
+**6.1 Open Project Properties**
 - Right-click on your project in **Eclipse**.
 - Select **Properties** from the context menu.
 
-**5.2 Navigate to Build Path**
+**6.2 Navigate to Build Path**
 - In the **Properties** dialog, select **Java Build Path** on the left.
 
-**5.3 Add Library**
+**6.3 Add Library**
 - In the **Java Build Path** window, go to the **Libraries** tab.
 - Click **Add Library** → **Server Runtime** → **Next**.
 
-**5.4 Select the Server**
+**6.4 Select the Server**
 - In the list of available server runtimes, select your **Tomcat** server
 - If your server runtime is not listed, you can add it by clicking **Add External Servers**, and then browse to the location where your server is installed.
 
-**5.5 Finish**
+**6.5 Finish**
 - After selecting the server runtime, click **Finish** to add it to your project.
 
-**5.6 Apply Changes**
+**6.6 Apply Changes**
 - Click **Apply and Close** to save the changes.
 
 **Verify Classpath**
 
 Once the server runtime libraries are added to your classpath, you should be able to access the required classes (such as HttpServlet, ServletException, etc.) from your servlet API in your project.
 
-### 6. Troubleshooting
+### 7. Troubleshooting
 
 These are some **troubles** that you could mostly likely face. If there are any other problem that you think needs to be mentioned which will help others, please feel free to add here.
 
-**6.1 Missing Class Errors**
+**7.1 Missing Class Errors**
 - If you are still seeing missing class errors after adding the runtime libraries, ensure the Maven scope for your dependencies is set correctly (e.g., provided).
 
-**6.2 404 Not Found**
+**7.2 404 Not Found**
 - Ensure that the servlet URL mapping in web.xml or @WebServlet annotation matches the path you are trying to access in the browser.
 
-**6.3 Servlet not deploying**
-- Make sure that the Dynamic Web Module facet is enabled in Eclipse. Go to Project Facets → ensure Dynamic Web Module is checked.
+**7.3 Servlet not deploying**
+- Make sure that the Dynamic Web Module facet is enabled in Eclipse. Go to **Project Facets** → ensure Dynamic Web Module is checked.
 
-**6.4 ClassNotFoundException**
+**7.4 ClassNotFoundException**
 - Ensure that the correct dependencies are in your pom.xml, and run mvn clean install to rebuild the project.
+
+**7.5 Server Not Starting**
+ If the Tomcat server doesn't start, ensure your server.xml is configured correctly and that the server is pointing to the correct project.
+
+### 8. Contributing
+Feel free to fork the repository and submit pull requests for any changes or improvements.
+
+### 9. License
+This project is licensed under the MIT License.
