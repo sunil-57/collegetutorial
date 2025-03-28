@@ -94,6 +94,7 @@ Once the server runtime libraries are added to your classpath, you should be abl
 ### 6. Troubleshooting
 
 These are some **troubles** that you could mostly likely face. If there are any other problem that you think needs to be mentioned which will help others, please feel free to add here.
+
 **6.1 Missing Class Errors**
 - If you are still seeing missing class errors after adding the runtime libraries, ensure the Maven scope for your dependencies is set correctly (e.g., provided).
 
