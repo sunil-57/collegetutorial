@@ -94,7 +94,7 @@ Once the server runtime libraries are added to your classpath, you should be abl
 ### 6. Troubleshooting
 - If you are still seeing missing class errors after adding the runtime libraries, ensure the Maven scope for your dependencies is set correctly (e.g., provided).
 
-** 404 Not Found**
+**404 Not Found**
 - Ensure that the servlet URL mapping in web.xml or @WebServlet annotation matches the path you are trying to access in the browser.
 
 **Servlet not deploying**
