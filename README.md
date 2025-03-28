@@ -115,11 +115,9 @@ These are some **troubles** that you could mostly likely face. If there are any 
 
 **7.5 Server Not Starting**
  If the Tomcat server doesn't start, ensure your server.xml is configured correctly and that the server is pointing to the correct project.
- 
-
 
 ### 8. Contributing
 Feel free to fork the repository and submit pull requests for any changes or improvements.
 
 ### 9. License
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License.
