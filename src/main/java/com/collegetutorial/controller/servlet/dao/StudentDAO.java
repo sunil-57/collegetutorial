@@ -1,4 +1,4 @@
-package com.collegetutorial.controller.dao;
+package com.collegetutorial.controller.servlet.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.collegetutorial.controller.database.DatabaseConnection;
-import com.collegetutorial.controller.model.Student;
+import com.collegetutorial.controller.servlet.database.DatabaseConnection;
+import com.collegetutorial.controller.servlet.model.Student;
 
 public class StudentDAO {
 	private Connection conn;
