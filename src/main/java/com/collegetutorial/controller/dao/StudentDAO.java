@@ -44,17 +44,17 @@ public class StudentDAO {
 				ps = conn.prepareStatement(query);
 				ResultSet studentSet = ps.executeQuery();
 				while(studentSet.next()) {
-					Student student = new Student(studentSet.getString("username"), studentSet.getString("password"));
+					String username = studentSet.getString("username");
+					String password = studentSet.getString("password");
+					Student student = new Student(username,password);
 					students.add(student);
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 		}
 		return students;
-		
 	}
 	
 }
