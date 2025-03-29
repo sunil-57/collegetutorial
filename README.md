@@ -2,7 +2,7 @@
 
 This is the start of the **Maven Project** collegetutorial. This is entirely done for the assistance of the students in setting up the project while working in a group.
 
-This project is initially set up with **Tomcat Version 8.5**, with the project properties of **dynamic web module** version 3.1. I would like to request the maintainers to know this. 
+This project is set up with **Tomcat Version 8.5**, with the project properties of **dynamic web module version 3.1**. I would like to request the maintainers to know this and follow accordingly. 
 
 **DATABASE SETUP** Please read **README.MD** in the **db** folder.
 
@@ -20,7 +20,7 @@ Before you start, make sure you have the following installed on your system:
 First, clone the project from GitHub to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/collegetutorial.git
+git clone https://github.com/sunil-57/collegetutorial.git
 
 cd your-repository
 ```
@@ -93,13 +93,13 @@ To add server runtime libraries (such as Tomcat) to the classpath of your Maven 
 
 **Verify Classpath**
 
-Once the server runtime libraries are added to your classpath, you should be able to access the required classes (such as HttpServlet, ServletException, etc.) from your servlet API in your project.
+Once the server runtime libraries are added to your classpath, you should be able to access the required classes (such as HttpServlet, ServletException, etc.) from your servlet API in your project. Try running the project in the server even though there are some error warnings.
 
-#### You are now Good To Go. Make sure your XAMPP is running and your database is ready to go as well.
+#### You are now Good To Go. Make sure your XAMPP is running and your database is running as well.
 
 ### 7. Troubleshooting
 
-These are some **troubles** that you could mostly likely face. If there are any other problem that you think needs to be mentioned which will help others, please feel free to add here.
+These are some **troubles** that you could probably face. If there are any other problem that you think needs to be mentioned which will help others, please feel free to add here.
 
 **7.1 Missing Class Errors**
 - If you are still seeing missing class errors after adding the runtime libraries, ensure the Maven scope for your dependencies is set correctly (e.g., provided).
@@ -111,7 +111,7 @@ These are some **troubles** that you could mostly likely face. If there are any 
 - Make sure that the Dynamic Web Module facet is enabled in Eclipse. Go to **Project Facets** → ensure Dynamic Web Module is checked.
 
 **7.4 ClassNotFoundException**
-- Ensure that the correct dependencies are in your pom.xml, and run mvn clean install to rebuild the project.
+- Ensure that the correct dependencies are in your pom.xml.
 
 **7.5 Server Not Starting**
  If the Tomcat server doesn't start, ensure your server.xml is configured correctly and that the server is pointing to the correct project.
