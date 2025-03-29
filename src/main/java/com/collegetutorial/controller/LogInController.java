@@ -3,6 +3,7 @@ package com.collegetutorial.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,13 +49,22 @@ public class LogInController extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		Student student = new Student(username, password);
+		
 		out.println("<html><body><h1>"+username+"</h1>");
 		out.println("<p>"+password+"</p></body></html>");
 		try {
 			StudentDAO studentDAO = new StudentDAO();
 			boolean isStudentAdded = studentDAO.addStudent(student);
 			if(isStudentAdded == true) {
-				out.println("Student Added Successfully");
+				out.println("<p>Student Added Successfully</p>");
+				out.println("<p>Student Info</p>");
+			        ArrayList<Student> studentList = studentDAO.getStudents();
+					for(Student studentInfo: studentList) {
+						out.println("<p>");
+						out.println(studentInfo.getUsername());
+						out.println(studentInfo.getPassword());
+						out.println("</p>");
+					}
 			}else {
 				out.println("Failed to Add Student");
 			}
