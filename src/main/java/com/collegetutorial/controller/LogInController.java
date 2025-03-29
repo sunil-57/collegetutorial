@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.controller.dao.StudentDAO;
-import com.controller.model.Student;
+import com.collegetutorial.controller.dao.StudentDAO;
+import com.collegetutorial.controller.model.Student;
 
 /**
  * Servlet implementation class LogInController

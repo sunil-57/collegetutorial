@@ -1,4 +1,4 @@
-package com.controller.database;
+package com.collegetutorial.controller.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
