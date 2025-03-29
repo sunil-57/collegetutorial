@@ -1,4 +1,4 @@
-package com.collegetutorial.controller.servlet.model;
+package com.collegetutorial.model;
 
 public class Student {
 	private String username;
