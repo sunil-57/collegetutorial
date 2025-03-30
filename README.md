@@ -114,7 +114,7 @@ These are some **troubles** that you could probably face. If there are any other
 - Ensure that the correct dependencies are in your pom.xml.
 
 **7.5 Server Not Starting**
- If the Tomcat server doesn't start, ensure your server.xml is configured correctly and that the server is pointing to the correct project.
+- If the Tomcat server doesn't start, ensure your server.xml is configured correctly and that the server is pointing to the correct project.
 
 ### 8. Contributing
 Feel free to fork the repository and submit pull requests for any changes or improvements.
