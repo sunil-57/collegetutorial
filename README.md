@@ -22,7 +22,7 @@ First, clone the project from GitHub to your local machine:
 ```bash
 git clone https://github.com/sunil-57/collegetutorial.git
 
-cd your-repository
+cd collegetutorial
 ```
 ### 2. Import the project in eclipse
 
