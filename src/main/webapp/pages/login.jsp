@@ -11,7 +11,7 @@
 <body>
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow" style="width: 25rem;">
-            <h3 class="text-center">Register</h3>
+            <h3 class="text-center">Log In</h3>
             <form action="../LogInController" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Username</label>
@@ -21,7 +21,7 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" >
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Register</button>
+                <button type="submit" class="btn btn-primary w-100">Log In</button>
             </form>
         </div>
     </div>
