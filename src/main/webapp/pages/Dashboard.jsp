@@ -37,7 +37,7 @@
                 <div class="card-body">
                     
                     <!-- Add New Category Form -->
-                    <form action="${pageContext.request.contextPath}/CategoryController" method="post" class="mb-4">
+                    <form action="${pageContext.request.contextPath}/AddCategoryServlet" method="post" class="mb-4">
                         <input type="hidden" name="action" value="add">
                         <div class="row">
                             <div class="col-md-6">
@@ -73,7 +73,7 @@
                             <tbody>
                                 <c:forEach var="category" items="${categories}">
                                     <tr>
-                                        <td>${category.id}</td>
+                                        <td>${category.categoryId}</td>
                                         <td>${category.name}</td>
                                         <td>
                                             <c:choose>
@@ -88,14 +88,14 @@
                                         <td>
                                             <!-- Edit Button -->
                                             <button class="btn btn-sm btn-warning" data-bs-toggle="modal" 
-                                                    data-bs-target="#editModal${category.id}">
+                                                    data-bs-target="#editModal${category.categoryId}">
                                                 <i class="bi bi-pencil"></i> Edit
                                             </button>
                                             
                                             <!-- Delete Form -->
                                             <form action="${pageContext.request.contextPath}/CategoryController" method="post" style="display:inline;">
                                                 <input type="hidden" name="action" value="delete">
-                                                <input type="hidden" name="categoryId" value="${category.id}">
+                                                <input type="hidden" name="categoryId" value="${category.categoryId}">
                                                 <button type="submit" class="btn btn-sm btn-danger" 
                                                         onclick="return confirm('Are you sure? This will delete ${category.name} category')">
                                                     <i class="bi bi-trash"></i> Delete
@@ -105,7 +105,7 @@
                                     </tr>
                                     
                                     <!-- Edit Modal -->
-                                    <div class="modal fade" id="editModal${category.id}" tabindex="-1">
+                                    <div class="modal fade" id="editModal${category.categoryId}" tabindex="-1">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -115,7 +115,7 @@
                                                 <form action="${pageContext.request.contextPath}/CategoryController" method="post">
                                                     <div class="modal-body">
                                                         <input type="hidden" name="action" value="update">
-                                                        <input type="hidden" name="categoryId" value="${category.id}">
+                                                        <input type="hidden" name="categoryId" value="${category.categoryId}">
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="mb-3">

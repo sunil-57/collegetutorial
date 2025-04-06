@@ -41,7 +41,7 @@ public class CategoryDAO {
     // get All Categories
     public ArrayList<Category> getAllCategories() throws SQLException {
     	ArrayList<Category> categoryList = new ArrayList<>();
-        String sql = "SELECT category_id, name, description, created_at FROM categories ORDER BY name";
+        String sql = "SELECT category_id, name, description, created_at FROM categories";
         if(conn != null) {
         	ps = conn.prepareStatement(sql);
     		ResultSet categorySet = ps.executeQuery(sql);
