@@ -14,8 +14,8 @@
             <h3 class="text-center">Log In</h3>
             <form action="../LogInController" method="post">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="email" name="username">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder = "user@example.com" name="email">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>

@@ -5,10 +5,24 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
+  <!-- MySQL Driver -->
   <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.33</version> <!-- Use the latest version -->
+  </dependency>
+   <!-- Correct JSTL Dependency -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+ <!-- Servlet API (Required for JSP) -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>4.0.1</version>
+    <scope>provided</scope> <!-- Provided by Tomcat -->
 </dependency>
   </dependencies>
   <build>
