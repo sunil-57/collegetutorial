@@ -8,6 +8,14 @@ public class Category {
 	    private String name;
 	    private String description;
 	    private Timestamp createdAt;
+	    
+	    
+	    
+		public Category(String name, String description) {
+			super();
+			this.name = name;
+			this.description = description;
+		}
 		public Category(int categoryId, String name, String description, Timestamp createdAt) {
 			super();
 			this.categoryId = categoryId;
