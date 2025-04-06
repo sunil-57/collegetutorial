@@ -52,26 +52,28 @@ public class LogInController extends HttpServlet {
 			UserDAO userdao = new UserDAO();
 			User user = userdao.login(email, password);
 			if(user != null) {
-					if(user.getEmail().equals(email) && user.getPassword().equals(password)) {
+					
 							 // Create a session for the logged-in user
 			                HttpSession session = request.getSession();
 			                session.setAttribute("user", user);
 
 			                // Redirect to the Dashboard or home page (could be a different page based on your setup)
 			                response.sendRedirect(request.getContextPath() + "/pages/Dashboard.jsp");
-					}
-		             else {
+					
+			}else {
 		                // If login fails, send an error message
 		            	request.setAttribute("errorMessage", "Invalid email or password. Please try again.");
 		                request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
 		            }	
-			}
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// Log the error properly in production (use a logger)
+		    request.setAttribute("errorMessage", "A system error occurred. Please try again later.");
+		    request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
+		} finally {
+			if (out != null) {
+		        out.close();
+		    }
 		}
 		
 	}
