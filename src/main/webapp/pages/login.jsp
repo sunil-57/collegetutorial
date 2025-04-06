@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,13 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow" style="width: 25rem;">
             <h3 class="text-center">Log In</h3>
+            <!-- Error Message Display -->
+            <c:if test="${not empty errorMessage}">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    ${errorMessage}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </c:if>
             <form action="../LogInController" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
