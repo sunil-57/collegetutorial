@@ -54,8 +54,8 @@ public class LogInController extends HttpServlet {
 			if(user != null) {
 					if(user.getEmail().equals(email) && user.getPassword().equals(password)) {
 							 // Create a session for the logged-in user
-			               // HttpSession session = request.getSession();
-			              //  session.setAttribute("user", user);
+			                HttpSession session = request.getSession();
+			                session.setAttribute("user", user);
 
 			                // Redirect to the Dashboard or home page (could be a different page based on your setup)
 			                response.sendRedirect(request.getContextPath() + "/pages/Dashboard.jsp");
