@@ -20,7 +20,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </c:if>
-            <form action="../LogInController" method="post">
+            <form action="${pageContext.request.contextPath}/LogInController" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" placeholder = "user@example.com" name="email">

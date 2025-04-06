@@ -82,8 +82,8 @@ public class UserDAO {
                 ps.setString(2, password); // NOTE: Password should be hashed in production
                 ResultSet userSet = ps.executeQuery();
 
-                if (userSet.next()) {
-                	new User(
+                if(userSet.next()) {
+                	user = new User(
                 			userSet.getInt("user_id"),
                 			userSet.getString("name"),
                 			userSet.getString("email"),
@@ -101,6 +101,5 @@ public class UserDAO {
         }
         return user;
     }
-	
 	
 }

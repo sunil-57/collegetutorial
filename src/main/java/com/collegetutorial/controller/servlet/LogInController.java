@@ -10,9 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.collegetutorial.controller.dao.StudentDAO;
-import com.collegetutorial.model.Student;
+import com.collegetutorial.controller.dao.UserDAO;
+import com.collegetutorial.model.User;
 
 /**
  * Servlet implementation class LogInController
@@ -45,30 +46,26 @@ public class LogInController extends HttpServlet {
 		doGet(request, response);
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
-		Student student = new Student(username, password);
-		
-		out.println("<html><body><h1>"+username+"</h1>");
-		out.println("<p>"+password+"</p></body></html>");
 		try {
-			StudentDAO studentDAO = new StudentDAO();
-			boolean isStudentAdded = studentDAO.addStudent(student);
-			if(isStudentAdded == true) {
-				out.println("<p>Student Added Successfully</p>");
-				out.println("<p>Student Info</p>");
-			        ArrayList<Student> studentList = studentDAO.getStudents();
-					for(Student studentInfo: studentList) {
-						out.println("<p>");
-						out.println(studentInfo.getUsername());
-						out.println(studentInfo.getPassword());
-						out.println("</p>");
+			UserDAO userdao = new UserDAO();
+			User user = userdao.login(email, password);
+			if(user != null) {
+					if(user.getEmail().equals(email) && user.getPassword().equals(password)) {
+							 // Create a session for the logged-in user
+			               // HttpSession session = request.getSession();
+			              //  session.setAttribute("user", user);
+
+			                // Redirect to the Dashboard or home page (could be a different page based on your setup)
+			                response.sendRedirect(request.getContextPath() + "/pages/Dashboard.jsp");
 					}
-			}else {
-				out.println("Failed to Add Student");
+		             else {
+		                // If login fails, send an error message
+		            	request.setAttribute("errorMessage", "Invalid email or password. Please try again.");
+		                request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
+		            }	
 			}
-			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,6 +73,7 @@ public class LogInController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 }
