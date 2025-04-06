@@ -38,7 +38,7 @@ public class CategoryDAO {
 		return isRowInserted;
       }
     
-    // READ All Categories
+    // get All Categories
     public ArrayList<Category> getAllCategories() throws SQLException {
     	ArrayList<Category> categoryList = new ArrayList<>();
         String sql = "SELECT category_id, name, description, created_at FROM categories ORDER BY name";
