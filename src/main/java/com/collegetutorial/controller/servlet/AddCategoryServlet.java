@@ -28,20 +28,8 @@ public class AddCategoryServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
 		 	String name = request.getParameter("categoryName");
 	        String description = request.getParameter("categoryDescription");
 	        
@@ -52,20 +40,16 @@ public class AddCategoryServlet extends HttpServlet {
 	        	boolean isCategoryAdded = categorydao.addCategory(category);
 	        	
 	        	if(isCategoryAdded == true) {
-	        		ArrayList<Category> categories = categorydao.getAllCategories();
 	        		 // Store categories in request/session to display in Dashboard
-	                request.setAttribute("categories", categories);
-	                
-	                // Forward to Dashboard (maintains same request)
-	                request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
-	        	}else {
+	                request.setAttribute("successMessage", "Category Added Successfully");
+	            }else {
 	        		//sending error message to webpage
-	                request.setAttribute("error", "Category could not be added");
-	                request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
+	                request.setAttribute("errorMessage", "Category could not be added");
 	            }
+	        	request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
 	           
 	        } catch (SQLException | ClassNotFoundException e) {
-	        	 request.setAttribute("error", "Database error: " + e.getMessage());
+	        	 request.setAttribute("errorMessage", "Database error: " + e.getMessage());
 	        	    request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
 	        } 
 	}
