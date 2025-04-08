@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-
     <div class="container mt-5">
         <div class="row">
             <div class="col-12 text-center">
@@ -72,6 +71,8 @@
                         </div>
                         <button type="submit" class="btn btn-success">Add Category</button>
                     </form>
+                      <!-- View Categories Button -->
+                        <a href="${pageContext.request.contextPath}/GetCategoriesServlet" class="btn btn-primary mt-3">View Available Categories</a>
                 </div>
             </div>
         </div>
