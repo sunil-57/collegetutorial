@@ -59,11 +59,12 @@ public class AddCategoryServlet extends HttpServlet {
 	                // Forward to Dashboard (maintains same request)
 	                request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
 	        	}else {
+	        		//sending error message to webpage
 	                request.setAttribute("error", "Category could not be added");
 	                request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
 	            }
 	           
-	        } catch (SQLException |ClassNotFoundException e) {
+	        } catch (SQLException | ClassNotFoundException e) {
 	        	 request.setAttribute("error", "Database error: " + e.getMessage());
 	        	    request.getRequestDispatcher("/pages/Dashboard.jsp").forward(request, response);
 	        } 
