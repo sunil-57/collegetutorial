@@ -78,7 +78,7 @@ To add server runtime libraries (such as Tomcat) to the classpath of your Maven 
 - In the **Properties** dialog, select **Java Build Path** on the left.
 
 **6.3 Add Library**
-- In the **Java Build Path** window, go to the **Libraries** tab.
+- In the **Java Build Path** window, go to the **Libraries** tab -> **Classpath** .
 - Click **Add Library** → **Server Runtime** → **Next**.
 
 **6.4 Select the Server**
