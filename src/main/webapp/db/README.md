@@ -35,12 +35,12 @@ This guide explains how to import the `init.sql` and `seed.sql` files into your 
 3. **Import `init.sql`**  
    - Select your newly created database from the sidebar.
    - Go to the **Import** tab.
-   - Click **Choose File**, locate and select `init.sql`, and click **Go**.
+   - Click **Choose File**, locate and select `init.sql`, and click **Import**.
 
 4. **Import `seed.sql`**  
    - Ensure you're still inside the same database.
    - Go to the **Import** tab again.
-   - Click **Choose File**, locate and select `seed.sql`, and click **Go**.
+   - Click **Choose File**, locate and select `seed.sql`, and click **Import**.
 
 ---
 
