@@ -109,6 +109,6 @@ Before importing new files or modifying the database:
 
 ---
 
-**CONTINUE WITH THE PROJECT SETUP: ** Please read [**README.MD**](../../../README.md). 
+**CONTINUE WITH THE PROJECT SETUP: ** Please read [**README.MD**](../../../../../README.md). 
 
 ---
