@@ -86,12 +86,30 @@
 								Category</button>
 						</form>
 						<!-- View Categories Button -->
-						<a href="${pageContext.request.contextPath}/GetCategoriesServlet"
+						<a href="${pageContext.request.contextPath}/GetCategoriesServlet?page=viewCategories"
 							class="btn btn-primary mt-3">View Available Categories</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- Product Management Section -->
+		<div class="row mt-5">
+			<div class="col-md-10 mx-auto">
+				<div class="card">
+					<div class="card-header bg-success text-white">
+						<h4 class="mb-0">Product Management</h4>
+					</div>
+					<div class="card-body">
+						<h3>Add a New Product</h3>
+						<p>Click the button below to open the product form.</p>
+						<a
+							href="${pageContext.request.contextPath}/GetCategoriesServlet?page=addProduct"
+							class="btn btn-success mt-2">Add Product</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	<!-- Logout button -->
 	<div class="container mt-5 text-center">
