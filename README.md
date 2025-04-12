@@ -2,10 +2,11 @@
 
 This is the start of the **Maven Project** collegetutorial. This is entirely done for the assistance of the students in setting up the project while working in a group.
 
-This project is set up with **Tomcat Version 8.5**, with the project properties of **dynamic web module version 3.1**. I would like to request the maintainers to know this and follow accordingly. 
+This project is set up with **Tomcat Version 8.5**, with the project properties of **dynamic web module version 3.1**. I would like to request the students to know this and the follow accordingly. 
 
-**DATABASE SETUP** Please read **README.MD** in the **db** folder.
+>> Start your project setup with **DATABASE** setup. 
 
+**DATABASE SETUP:** Please read [**README.MD**](./src/main/webapp/db/README.md) in the **db** folder. 
 ## Prerequisites
 Before you start, make sure you have the following installed on your system:
 - **JDK 11 or later**
