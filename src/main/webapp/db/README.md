@@ -108,3 +108,7 @@ Before importing new files or modifying the database:
 - **Use consistent naming conventions** for tables, columns, and constraints for easier maintenance.
 
 ---
+
+**CONTINUE WITH THE PROJECT SETUP: ** Please read [**README.MD**](../../../README.md). 
+
+---
