@@ -21,7 +21,7 @@
         <div class="alert alert-danger">${errorMessage}</div>
     </c:if>
 
-    <form action="AddProductServlet" method="post">
+    <form action="${pageContext.request.contextPath}/AddProductServlet" method="post">
         <div class="form-group">
             <label for="name">Product Name</label>
             <input type="text" class="form-control" id="name" name="name" required placeholder="Enter product name">
@@ -46,8 +46,8 @@
             <label for="categoryId">Category</label>
             <select class="form-control" id="categoryId" name="categoryId" required>
                 <option value="">-- Select Category --</option>
-                <c:forEach var="cat" items="${categoryList}">
-                    <option value="${cat.categoryId}">${cat.name}</option>
+                <c:forEach var="category" items="${categories}">
+                    <option value="${category.categoryId}">${category.name}</option>
                 </c:forEach>
             </select>
         </div>
