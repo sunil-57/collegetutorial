@@ -36,6 +36,7 @@ label {
 </style>
 </head>
 <body>
+	<jsp:include page="Header.jsp" />
 	<div class="container mt-4 mb-5">
 
 		<!-- Display message if there is any -->
@@ -149,4 +150,5 @@ label {
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<jsp:include page="Footer.jsp" />
 </html>
