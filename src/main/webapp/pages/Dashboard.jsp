@@ -9,114 +9,113 @@
 <title>User Dashboard</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+body {
+	font-size: 0.9rem;
+}
+
+.card-header h4 {
+	font-size: 1.1rem;
+}
+
+h1, h3 {
+	font-size: 1.3rem;
+}
+
+.form-control, textarea {
+	font-size: 0.85rem;
+	padding: 0.3rem 0.5rem;
+}
+
+.btn {
+	font-size: 0.85rem;
+	padding: 0.4rem 0.75rem;
+}
+
+label {
+	margin-bottom: 0.2rem;
+	font-weight: 500;
+}
+</style>
 </head>
 <body>
-	<div class="container mt-5">
-		<div class="row">
-			<div class="col-12 text-center">
-				<!-- sessionScope is used to get the attributes that set in the request -> view servlet where session starts-->
-				<h1>
-					Welcome,
-					<c:out value="${sessionScope.userWithSession.name}" />
-					!
-				</h1>
-				<p class="lead">We are glad to have you here. Explore the
-					products and services we offer!</p>
+	<div class="container mt-4">
+		<div class="text-center mb-4">
+			<h1>
+				Welcome,
+				<c:out value="${sessionScope.userWithSession.name}" />
+				!
+			</h1>
+			<p class="text-muted mb-1">We are glad to have you here.</p>
+			<p class="text-muted">
+				Your Role: <strong><c:out
+						value="${sessionScope.userWithSession.role}" /></strong>
+			</p>
+		</div>
+
+		<!-- Category Management -->
+		<div class="card mb-4">
+			<div class="card-header bg-primary text-white">
+				<h4 class="mb-0">Category Management</h4>
+			</div>
+			<div class="card-body">
+				<h3 class="mb-3">Add New Category</h3>
+
+				<c:if test="${not empty successMessage}">
+					<div class="alert alert-success py-1">
+						<c:out value="${successMessage}" />
+					</div>
+				</c:if>
+				<c:if test="${not empty errorMessage}">
+					<div class="alert alert-danger py-1">
+						<c:out value="${errorMessage}" />
+					</div>
+				</c:if>
+
+				<form action="${pageContext.request.contextPath}/AddCategoryServlet"
+					method="post" class="mb-3">
+					<input type="hidden" name="action" value="add">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="categoryName">Category Name</label> <input
+								type="text" class="form-control" id="categoryName"
+								name="categoryName" placeholder="e.g. Electronics" required>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="categoryDescription">Description</label>
+							<textarea class="form-control" id="categoryDescription"
+								name="categoryDescription" rows="1"
+								placeholder="e.g. Devices and gadgets"></textarea>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-success">Add Category</button>
+					<a
+						href="${pageContext.request.contextPath}/GetCategoriesServlet?page=viewCategories"
+						class="btn btn-outline-primary ml-2">View Categories</a>
+				</form>
 			</div>
 		</div>
 
-		<!-- Example for displaying user's role (optional)-->
-		<div class="row mt-3">
-			<div class="col-12 text-center">
-				<p>
-					Your Role: <strong><c:out
-							value="${sessionScope.userWithSession.role}" /></strong>
-				</p>
+		<!-- Product Management -->
+		<div class="card mb-4">
+			<div class="card-header bg-success text-white">
+				<h4 class="mb-0">Product Management</h4>
 			</div>
+			<div class="card-body">
+				<h3 class="mb-3">Add New Product</h3>
+				<p class="mb-2">Click below to open the product form.</p>
+				<a
+					href="${pageContext.request.contextPath}/GetCategoriesServlet?page=addProduct"
+					class="btn btn-success">Add Product</a>
+			</div>
+		</div>
+
+		<!-- Logout Button -->
+		<div class="text-center mt-4">
+			<form action="LogOutController" method="post">
+				<button type="submit" class="btn btn-danger">Log Out</button>
+			</form>
 		</div>
 	</div>
-	<div class="container mt-5">
-		<!-- Category Management Section -->
-		<div class="row mt-5">
-			<div class="col-md-10 mx-auto">
-				<div class="card">
-					<div class="card-header bg-primary text-white">
-						<h4 class="mb-0">Category Management</h4>
-					</div>
-					<div class="card-body">
-						<h3>Add a New Category</h3>
-
-						<!-- Display Success Message -->
-						<c:if test="${not empty successMessage}">
-							<div class="alert alert-success">
-								<c:out value="${successMessage}" />
-							</div>
-						</c:if>
-
-						<!-- Display Error Message -->
-						<c:if test="${not empty errorMessage}">
-							<div class="alert alert-danger">
-								<c:out value="${errorMessage}" />
-							</div>
-						</c:if>
-						<!-- Add New Category Form -->
-						<form
-							action="${pageContext.request.contextPath}/AddCategoryServlet"
-							method="post" class="mb-4">
-							<input type="hidden" name="action" value="add">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="mb-3">
-										<label for="categoryName" class="form-label">Category
-											Name</label> <input type="text" class="form-control"
-											id="categoryName" name="categoryName"
-											placeholder="Electronics" required>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="mb-3">
-										<label for="categoryDescription" class="form-label">Description</label>
-										<textarea class="form-control" id="categoryDescription"
-											name="categoryDescription" rows="1"
-											placeholder="Devices and gadgets"></textarea>
-									</div>
-								</div>
-							</div>
-							<button type="submit" class="btn btn-success">Add
-								Category</button>
-						</form>
-						<!-- View Categories Button -->
-						<a href="${pageContext.request.contextPath}/GetCategoriesServlet?page=viewCategories"
-							class="btn btn-primary mt-3">View Available Categories</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Product Management Section -->
-		<div class="row mt-5">
-			<div class="col-md-10 mx-auto">
-				<div class="card">
-					<div class="card-header bg-success text-white">
-						<h4 class="mb-0">Product Management</h4>
-					</div>
-					<div class="card-body">
-						<h3>Add a New Product</h3>
-						<p>Click the button below to open the product form.</p>
-						<a
-							href="${pageContext.request.contextPath}/GetCategoriesServlet?page=addProduct"
-							class="btn btn-success mt-2">Add Product</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<!-- Logout button -->
-	<div class="container mt-5 text-center">
-		<form action="LogOutController" method="post">
-			<button type="submit" class="btn btn-danger">Log Out</button>
-		</form>
-	</div>
-
 </body>
 </html>
