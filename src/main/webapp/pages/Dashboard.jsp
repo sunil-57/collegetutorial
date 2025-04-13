@@ -39,7 +39,7 @@ label {
 </style>
 </head>
 <body>
-	<jsp:include page="Header.jsp" />
+	<jsp:include page="/pages/Header.jsp" />
 	<div class="container mt-4">
 		<div class="text-center mb-4">
 			<h1>
@@ -90,34 +90,10 @@ label {
 						</div>
 					</div>
 					<button type="submit" class="btn btn-success">Add Category</button>
-					<a
-						href="${pageContext.request.contextPath}/GetCategoriesServlet?page=viewCategories"
-						class="btn btn-outline-primary ml-2">View Categories</a>
 				</form>
 			</div>
 		</div>
-
-		<!-- Product Management -->
-		<div class="card mb-4">
-			<div class="card-header bg-success text-white">
-				<h4 class="mb-0">Product Management</h4>
-			</div>
-			<div class="card-body">
-				<h3 class="mb-3">Add New Product</h3>
-				<p class="mb-2">Click below to open the product form.</p>
-				<a
-					href="${pageContext.request.contextPath}/GetCategoriesServlet?page=addProduct"
-					class="btn btn-success">Add Product</a>
-			</div>
-		</div>
-
-		<!-- Logout Button -->
-		<div class="text-center mt-4">
-			<form action="LogOutController" method="post">
-				<button type="submit" class="btn btn-danger">Log Out</button>
-			</form>
-		</div>
 	</div>
 </body>
-<jsp:include page="Footer.jsp" />
+<jsp:include page="/pages/Footer.jsp" />
 </html>

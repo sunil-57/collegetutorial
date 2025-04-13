@@ -36,7 +36,7 @@ label {
 </style>
 </head>
 <body>
-	<jsp:include page="Header.jsp" />
+	<jsp:include page="/pages/Header.jsp" />
 	<div class="container mt-4 mb-5">
 
 		<!-- Display message if there is any -->
@@ -58,7 +58,7 @@ label {
 			<table class="table table-sm table-striped table-hover">
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
+						<th>Category ID</th>
 						<th>Name</th>
 						<th>Description</th>
 						<th>Actions</th>
@@ -150,5 +150,5 @@ label {
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<jsp:include page="Footer.jsp" />
+<jsp:include page="/pages/Footer.jsp" />
 </html>
