@@ -39,6 +39,7 @@ label {
 </style>
 </head>
 <body>
+	<jsp:include page="Header.jsp" />
 	<div class="container mt-4">
 		<div class="text-center mb-4">
 			<h1>
@@ -118,4 +119,5 @@ label {
 		</div>
 	</div>
 </body>
+<jsp:include page="Footer.jsp" />
 </html>
