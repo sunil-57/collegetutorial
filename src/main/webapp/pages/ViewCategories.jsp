@@ -39,7 +39,7 @@ label {
 	<c:set var="activePage" value="categories" scope="request" />
 	<jsp:include page="/pages/Header.jsp" />
 	<div class="container mt-4 mb-5">
-
+		<jsp:include page="/pages/AddCategory.jsp" />
 		<!-- Display message if there is any -->
 		<c:if test="${not empty errorMessage}">
 			<div class="alert alert-${messageType} py-2 px-3 mb-3" role="alert">
@@ -83,7 +83,7 @@ label {
 								<button class="btn btn-sm btn-warning mb-1" data-toggle="modal"
 									data-target="#editModal${category.categoryId}">Edit</button> <!-- Delete Form -->
 								<form
-									action="${pageContext.request.contextPath}/CategoryController"
+									action="${pageContext.request.contextPath}/DeleteCategoryServlet"
 									method="post" style="display: inline;">
 									<input type="hidden" name="action" value="delete"> <input
 										type="hidden" name="categoryId" value="${category.categoryId}">
@@ -107,12 +107,11 @@ label {
 										</button>
 									</div>
 									<form
-										action="${pageContext.request.contextPath}/CategoryController"
+										action="${pageContext.request.contextPath}/EditCategoryServlet"
 										method="post">
 										<div class="modal-body">
-											<input type="hidden" name="action" value="update"> <input
-												type="hidden" name="categoryId"
-												value="${category.categoryId}">
+											<input type="hidden" name="action" value="update"> 
+											<input type="hidden" name="categoryId" value="${category.categoryId}">
 											<div class="row">
 												<div class="col-md-6">
 													<div class="mb-3">
@@ -133,7 +132,7 @@ label {
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary"
 												data-dismiss="modal">Cancel</button>
-											<button type="submit" class="btn btn-primary">Save
+											<button type="submit" class="btn btn-success">Save
 												Changes</button>
 										</div>
 									</form>
