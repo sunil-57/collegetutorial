@@ -36,6 +36,7 @@ label {
 </style>
 </head>
 <body>
+	<c:set var="activePage" value="categories" scope="request" />
 	<jsp:include page="/pages/Header.jsp" />
 	<div class="container mt-4 mb-5">
 

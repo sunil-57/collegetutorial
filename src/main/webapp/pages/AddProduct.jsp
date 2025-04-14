@@ -22,6 +22,7 @@ h3, h4 {
 </style>
 </head>
 <body>
+<c:set var="activePage" value="products" scope="request" />
 	<jsp:include page="/pages/Header.jsp" />
 	<div class="container mt-5">
 

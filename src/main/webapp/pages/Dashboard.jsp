@@ -39,7 +39,8 @@ label {
 </style>
 </head>
 <body>
-	<jsp:include page="/pages/Header.jsp" />
+<c:set var="activePage" value="dashboard" scope="request" />
+<jsp:include page="/pages/Header.jsp"/>
 	<div class="container mt-4">
 		<div class="text-center mb-4">
 			<h1>
