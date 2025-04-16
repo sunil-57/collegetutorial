@@ -25,14 +25,15 @@ public class AuthenticationFilter implements Filter {
 		// Check if logged in
 		HttpSession session = req.getSession(false);
 		boolean loggedIn = session != null && session.getAttribute("userWithSession") != null;
-		
+
 		if (!loggedIn && (uri.endsWith("Login.jsp") || uri.endsWith("LogInController"))) {
 			chain.doFilter(request, response);
 			return;
 		}
 		// Skipping filter for login page and login controller
 		if (loggedIn) {
-			if ((uri.endsWith("Login.jsp") || uri.endsWith("LogInController"))) {
+			if (uri.endsWith("Login.jsp") || uri.endsWith("LogInController")) {
+
 				res.sendRedirect(req.getContextPath() + "/pages/Dashboard.jsp");
 			} else {
 				chain.doFilter(request, response);

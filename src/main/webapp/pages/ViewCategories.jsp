@@ -110,8 +110,9 @@ label {
 										action="${pageContext.request.contextPath}/EditCategoryServlet"
 										method="post">
 										<div class="modal-body">
-											<input type="hidden" name="action" value="update"> 
-											<input type="hidden" name="categoryId" value="${category.categoryId}">
+											<input type="hidden" name="action" value="update"> <input
+												type="hidden" name="categoryId"
+												value="${category.categoryId}">
 											<div class="row">
 												<div class="col-md-6">
 													<div class="mb-3">
