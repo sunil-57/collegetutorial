@@ -1,4 +1,4 @@
-=<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -12,8 +12,7 @@
 	rel="stylesheet">
 </head>
 <body>
-	<div
-		class="container d-flex justify-content-center align-items-center vh-100">
+	<div class="container d-flex justify-content-center align-items-center vh-100">
 		<div class="card p-4 shadow" style="width: 25rem;">
 			<h3 class="text-center">Log In</h3>
 			<!-- Error Message Display -->
