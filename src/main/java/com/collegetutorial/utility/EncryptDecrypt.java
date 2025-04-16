@@ -14,7 +14,7 @@ public class EncryptDecrypt {
 	private static final String SECRET_KEY = "my_super_secret_key";
 	private static final String SALT = "ssshhhhhhhhhhh!!!!";
 
-	public String encrypt(String strToEncrypt) {
+	public static String encrypt(String strToEncrypt) {
 		try {
 			byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
@@ -33,7 +33,7 @@ public class EncryptDecrypt {
 		return null;
 	}
 
-	public String decrypt(String input) {
+	public static String decrypt(String input) {
 		try {
 			byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
