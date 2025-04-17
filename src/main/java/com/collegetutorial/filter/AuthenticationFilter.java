@@ -14,6 +14,17 @@ import javax.servlet.http.HttpSession;
 
 @WebFilter(urlPatterns = { "/pages/*" })
 public class AuthenticationFilter implements Filter {
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// Initialization code if required (for example: reading init parameters)
+		System.out.println("AuthenticationFilter initialized");
+	}
+
+	@Override
+	public void destroy() {
+		// Cleanup code if required
+		System.out.println("AuthenticationFilter destroyed");
+	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -21,7 +32,7 @@ public class AuthenticationFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 
 		String uri = req.getRequestURI();
-
+		
 		// Check if logged in
 		HttpSession session = req.getSession(false);
 		boolean loggedIn = session != null && session.getAttribute("userWithSession") != null;
