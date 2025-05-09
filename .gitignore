@@ -25,3 +25,37 @@ Thumbs.db
 
 # Ignore environment-specific files
 .env
+
+# Ignore build and deployment files
+*.war
+*.ear
+
+# Ignore servlet container output
+*.log
+
+# Ignore JetBrains cache
+out/
+
+# Ignore local server configuration files
+servers/
+
+# Ignore generated Javadoc
+doc/
+
+# NetBeans specific (if ever used)
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VSCode settings (if used)
+.vscode/
+
+# MacOS system file
+Icon?
+
+# Windows system files
+ehthumbs.db
+desktop.ini
